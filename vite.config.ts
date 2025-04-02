@@ -1,13 +1,12 @@
+import path from 'path';
+import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
-import { defineConfig } from 'vite'
-import solid from 'vite-plugin-solid'
-import tailwindcss from '@tailwindcss/vite';
+import solid from 'vite-plugin-solid';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     solid(),
-    tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: false,
@@ -36,5 +35,11 @@ export default defineConfig({
         suppressWarnings: true,
         type: 'module',
       },
-    })],
+    })
+  ],
+  resolve: {
+    alias: {
+      "~": path.resolve(__dirname, "./src")
+    }
+  }
 })

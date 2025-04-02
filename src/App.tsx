@@ -1,11 +1,12 @@
 import { createSignal } from 'solid-js';
-import PWABadge from './PWABadge.tsx';
-import { ThemeChanger } from './app/theme-changer.tsx';
+import PWABadge from './PWABadge';
+import { ThemeChanger } from './app/theme-changer';
 import solidLogo from './assets/solid.svg';
 import appLogo from '/favicon.svg';
 import { Title } from '@solidjs/meta';
-import { useI18N } from './providers/i18n-provider.tsx';
+import { useI18N } from './providers/i18n-provider';
 import { LocaleChanger } from './app/language-changer';
+import { Button } from './components/ui/button';
 
 function App() {
   const [count, setCount] = createSignal(0)
@@ -29,9 +30,6 @@ function App() {
             count is {count()}
           </button>
           <ThemeChanger />
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
         </div>
         <div>
           <div>{t('food').meat}</div>
@@ -41,6 +39,7 @@ function App() {
           Click on the Vite and Solid logos to learn more
         </p>
         <PWABadge />
+        <Button>test button</Button>
       </div>
     </>
   )

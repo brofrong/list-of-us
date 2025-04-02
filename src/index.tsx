@@ -4,8 +4,8 @@ import { render } from 'solid-js/web';
 import App from './App';
 import { TestPage } from './app/test.page';
 import './index.css';
-import { RootProviders } from './providers/root-providers';
 import { Layout } from './layout';
+import { RootProviders } from './providers/root-providers';
 
 const root = document.getElementById('root')
 
