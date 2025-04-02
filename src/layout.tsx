@@ -1,4 +1,6 @@
-const Layout = (props: { children: any; }) => {
+import { ParentComponent } from "solid-js";
+
+export const Layout: ParentComponent = (props) => {
   return (
     <>
       <header>Header</header>

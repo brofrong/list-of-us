@@ -5,6 +5,7 @@ import App from './App';
 import { TestPage } from './app/test.page';
 import './index.css';
 import { RootProviders } from './providers/root-providers';
+import { Layout } from './layout';
 
 const root = document.getElementById('root')
 
@@ -15,7 +16,7 @@ if (!root) {
 render(() => {
   return (
     <RootProviders>
-      <Router>
+      <Router root={Layout}>
         <Route path="/" component={App} />
         <Route path="/test" component={TestPage} />
       </Router>
