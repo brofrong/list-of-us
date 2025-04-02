@@ -1,6 +1,6 @@
 import { A } from "@solidjs/router";
 import { Component } from "solid-js";
-import { Title } from '@solidjs/meta';
+import { Title } from "@solidjs/meta";
 
 export const TestPage: Component = () => {
   return (
@@ -9,7 +9,5 @@ export const TestPage: Component = () => {
       <div>Test Page</div>
       <A href="/">go home!</A>
     </div>
-
-
-  )
-}
+  );
+};

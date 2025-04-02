@@ -7,11 +7,13 @@ export const LocaleChanger: Component = () => {
   return (
     <div>
       <div>current locale : {i18n.locale()}</div>
-      <select value={i18n.locale()} onchange={(e) => i18n.changeLocale(e.target.value)}>
+      <select
+        value={i18n.locale()}
+        onChange={(e) => i18n.changeLocale(e.target.value)}
+      >
         <option value="ru">ru</option>
         <option value="en">en</option>
       </select>
     </div>
-
-  )
-}
+  );
+};

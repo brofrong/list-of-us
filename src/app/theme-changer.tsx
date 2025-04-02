@@ -7,8 +7,12 @@ export const ThemeChanger: Component = () => {
   return (
     <div>
       <div>current theme : {theme.themeName()}</div>
-      <button class="bg-slate-300 dark:bg-slate-800" onclick={theme.changeTheme}>Change Theme</button>
+      <button
+        class="bg-slate-300 dark:bg-slate-800"
+        onClick={theme.changeTheme}
+      >
+        Change Theme
+      </button>
     </div>
-
-  )
-}
+  );
+};

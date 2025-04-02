@@ -2,10 +2,23 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import solid from 'vite-plugin-solid';
+import eslint from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    { // default settings on build (i.e. fail on error)
+      ...eslint(),
+      apply: 'build',
+    },
+    { // do not fail on serve (i.e. local development)
+      ...eslint({
+        failOnWarning: false,
+        failOnError: false,
+      }),
+      apply: 'serve',
+      enforce: 'post'
+    },
     solid(),
     VitePWA({
       registerType: 'autoUpdate',
