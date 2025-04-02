@@ -60,13 +60,12 @@ export const I18NProvider: ParentComponent = (props) => {
   };
 
   const dict = createMemo(() => i18n.flatten(dictionaries[selectedLocale()]));
-  // eslint-disable-next-line solid/reactivity
-  const t = i18n.translator(dict);
 
   const context: I18NContext = {
     locale: selectedLocale,
     changeLocale,
-    t: t,
+    // eslint-disable-next-line solid/reactivity
+    t: i18n.translator(dict),
   };
 
   return (

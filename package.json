@@ -19,6 +19,7 @@
     "eslint": "^9.23.0",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-solid": "^0.14.5",
+    "pocketbase": "^0.25.2",
     "prettier": "^3.5.3",
     "solid-js": "^1.9.5",
     "tailwind-merge": "^3.1.0",

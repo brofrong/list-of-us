@@ -1,6 +1,6 @@
 import {
   Accessor,
-  JSX,
+  ParentComponent,
   createContext,
   createSignal,
   useContext,
@@ -35,16 +35,7 @@ function getTheme(theme: ThemeOptions): Theme["theme"] {
   };
 }
 
-export function ThemeProvider(props: {
-  children:
-    | number
-    | boolean
-    | Node
-    | JSX.ArrayElement
-    | (string & {})
-    | null
-    | undefined;
-}) {
+export const ThemeProvider: ParentComponent = (props) => {
   const [theme, setTheme] = createSignal<ThemeOptions>(getLocalTheme());
 
   function changeTheme() {
@@ -68,7 +59,7 @@ export function ThemeProvider(props: {
       <div class={getTheme(theme())()}>{props.children}</div>
     </ThemeContext.Provider>
   );
-}
+};
 
 export function useTheme() {
   const context = useContext(ThemeContext);
