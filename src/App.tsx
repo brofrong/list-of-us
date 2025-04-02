@@ -1,15 +1,16 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
-import appLogo from '/favicon.svg'
-import PWABadge from './PWABadge.tsx'
-import { ThemeProvider } from './providers/theme-provider';
+import { createSignal } from 'solid-js';
+import PWABadge from './PWABadge.tsx';
 import { ThemeChanger } from './app/theme-changer.tsx';
+import solidLogo from './assets/solid.svg';
+import appLogo from '/favicon.svg';
+import { Title } from '@solidjs/meta';
 
 function App() {
   const [count, setCount] = createSignal(0)
 
   return (
-    <ThemeProvider>
+    <>
+      <Title>Main page</Title>
       <div class='container m-auto'>
         <div class='flex justify-between'>
           <a href="https://vite.dev" target="_blank">
@@ -34,7 +35,7 @@ function App() {
         </p>
         <PWABadge />
       </div>
-    </ThemeProvider>
+    </>
   )
 }
 
