@@ -4,9 +4,12 @@ import { ThemeChanger } from './app/theme-changer.tsx';
 import solidLogo from './assets/solid.svg';
 import appLogo from '/favicon.svg';
 import { Title } from '@solidjs/meta';
+import { useI18N } from './providers/i18n-provider.tsx';
+import { LocaleChanger } from './app/language-changer';
 
 function App() {
   const [count, setCount] = createSignal(0)
+  const { t } = useI18N();
 
   return (
     <>
@@ -29,6 +32,10 @@ function App() {
           <p>
             Edit <code>src/App.tsx</code> and save to test HMR
           </p>
+        </div>
+        <div>
+          <div>{t('food').meat}</div>
+          <LocaleChanger />
         </div>
         <p class="read-the-docs">
           Click on the Vite and Solid logos to learn more
