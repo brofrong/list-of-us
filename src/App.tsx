@@ -5,6 +5,8 @@ import { ThemeChanger } from "./app/theme-changer";
 import { Button } from "./components/ui/button";
 import { useI18N } from "./providers/i18n-provider";
 import { env } from "./lib/env";
+import { AuthTest } from "~/app/auth-test";
+import pb from "./pocketbase/pg";
 
 function App() {
   // const [count, setCount] = createSignal(0);
@@ -33,6 +35,8 @@ function App() {
         <div>{env.VITE_POCKETBASE_URL}</div>
         <PWABadge />
         <Button>test button</Button>
+        <AuthTest />
+        <p>auth: {JSON.stringify(pb.authStore.record?.name)}</p>
       </div>
     </>
   );

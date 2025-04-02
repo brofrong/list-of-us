@@ -5,7 +5,6 @@ const envSchema = z.object({
 });
 
 let _env: z.infer<typeof envSchema>;
-console.log(import.meta.env);
 
 try {
   _env = envSchema.parse(import.meta.env);
